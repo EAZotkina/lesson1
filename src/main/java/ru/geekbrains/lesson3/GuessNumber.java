@@ -3,7 +3,7 @@ package ru.geekbrains.lesson3;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Practical {
+public class GuessNumber {
     public static void main(String[] args) {
         guessNumber();
 
@@ -34,28 +34,26 @@ public class Practical {
                         break;
                     }
                 }else if (userNumber < randomNumber) {
-                    System.out.println("Загаданное число больше");
+                    System.out.println("Загаданное число больше.");
                 }else {
-                    System.out.println("Загаданное число меньше");
+                    System.out.println("Загаданное число меньше.");
 
                 }
 
                 if(tryCount == 3) {
-                    System.out.println("Попытки закончились. Вы проиграли");
+                    System.out.println();
+                    System.out.println("Попытки закончились. Вы проиграли!\nЗагаданное число " + randomNumber);
                     System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
                     int userChoice = sc.nextInt();
                     if (userChoice == 1) {
                         guessNumber();
 
                     }else {
+                        System.out.println("Игра окончена.");
                         break;
-
-                }
-
+                    }
                 }
             }
-
         }
-
     }
 
