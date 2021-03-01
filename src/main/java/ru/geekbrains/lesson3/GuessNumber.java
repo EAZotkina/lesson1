@@ -25,30 +25,28 @@ public class GuessNumber {
                 int userNumber = sc.nextInt();
                 if (userNumber == randomNumber) {
                     System.out.println("Поздравляю! Вы угадали!");
-                    System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
-                    int userChoice = sc.nextInt();
-                    if (userChoice == 1) {
-                        guessNumber();
-
-                    }else {
-                        break;
-                    }
-                }else if (userNumber < randomNumber) {
+                    System.out.println("Повторить игру ещё раз? 1 – да / 0 – нет");
+                        int userChoice = sc.nextInt();
+                              if (userChoice == 1) {
+                                  guessNumber();
+                              } else {
+                               break;
+                               }
+                } else if (userNumber < randomNumber) {
                     System.out.println("Загаданное число больше.");
-                }else {
+                } else {
                     System.out.println("Загаданное число меньше.");
-
                 }
 
                 if(tryCount == 3) {
                     System.out.println();
                     System.out.println("Попытки закончились. Вы проиграли!\nЗагаданное число " + randomNumber);
-                    System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
+                    System.out.println("Повторить игру ещё раз? 1 – да / 0 – нет");
                     int userChoice = sc.nextInt();
                     if (userChoice == 1) {
                         guessNumber();
 
-                    }else {
+                    } else {
                         System.out.println("Игра окончена.");
                         break;
                     }
