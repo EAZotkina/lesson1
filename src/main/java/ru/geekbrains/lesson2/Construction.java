@@ -10,12 +10,10 @@ public class Construction {
         fillArray();
         changeArray();
         fillDiagonal(9);
-        int[] mm = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9};
-        minMax(mm);
-        int[] arr2 = {2, 2, 2, 1, 2, 2, 10, 1};
-        checkBalance(arr2);
+        minMax();
+        checkBalance();
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
-        changePlace(arr, 3);
+        changePlace(arr, -4);
     }
 
 
@@ -104,10 +102,10 @@ public class Construction {
 
 //** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
 
-    public static void minMax(int[] mm) {
+    public static void minMax() {
         System.out.println("Задание 5. ");
 
-
+        int[] mm = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9};
         int min = mm[0];
         int max = mm[0];
         for (int i = 0; i < mm.length - 1; i++) {
@@ -133,23 +131,24 @@ public class Construction {
 // Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true, checkBalance([1, 1, 1, || 2, 1]) → true,
 // граница показана символами ||, эти символы в массив не входят.
 
-    public static boolean checkBalance(int[] arr2) {
+    public static boolean checkBalance() {
         System.out.println("Задание 6. ");
 
         boolean balance = false;
 
+        int[] arr = {2, 2, 2, 1, 2, 2, 10, 1};
 
         // найдем сумму чисел в массиве
         int sum = 0;
 
-        for (int i = 0; i < arr2.length; i++) {
-            sum += arr2[i];
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
         }
         // сумма в левой части
 
         int sumLeft = 0;
-        for (int j = 0; j < arr2.length; j++) {
-            sumLeft += arr2[j];
+        for (int j = 0; j < arr.length; j++) {
+            sumLeft += arr[j];
             // сравниваем сумму в левой части и в правой
             if (sumLeft == sum - sumLeft) {
                 balance = true;
@@ -173,31 +172,49 @@ public class Construction {
 
     public static int[] changePlace(int[] arr, int n) {
         System.out.println();
-        System.out.println("Задание 7.");
+        System.out.println("Задание 7. НЕ РЕШИЛА.");
 
-        int len = arr.length;
-//        n %= len;
-//        for (int j = len - 1; j >= n; j--){
-//            int c = arr[j];
-//            arr[j] = arr[j-n];
-//            arr[j-n] = c;
-//
-//        }
+        int place1, place2, buffer;
 
-        for (int i = 0; i < n % len; i++) {
-            for (int j = arr.length - 1; j > 0; j--) {
-                int c = arr[j];
-                arr[j] = arr[j - 1];
-                arr[j - 1] = c;
-            }
+        for (int i = 0; i < arr.length; i++) {
+            buffer = arr[i];
+            place1 = i;
+
+            if (n > 0) {
+                place2 = place1 + n;
+                    if (place2 >= arr.length)
+                        place2 = place2 - arr.length;
+
+                    if (place2 == i)
+                        break;
+
+                    arr[place1] = arr[place2];
+                    place1 = place2;
+
+
+            } else if(n < 0) {
+
+                    place2 = place1 + n;
+                    if (place2 < 0)
+                        place2 = place2 + arr.length;
+                        if (place2 == i)
+                            break;
+
+                        arr[place1] = arr[place2];
+                        place1 = place2;
+
+
+                }
+            arr[place1] = buffer;
+
         }
-
         System.out.println();
         System.out.println(Arrays.toString(arr));
         System.out.println();
 
         return arr;
     }
+
 
 }
 
