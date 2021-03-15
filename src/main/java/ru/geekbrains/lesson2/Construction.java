@@ -15,7 +15,7 @@ public class Construction {
         int[] arr2 = {2, 2, 2, 1, 2, 2, 10, 1};
         checkBalance(arr2);
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
-        changePlace(arr, 5);
+        changePlace(arr, 3);
     }
 
 
@@ -173,57 +173,31 @@ public class Construction {
 
     public static int[] changePlace(int[] arr, int n) {
         System.out.println();
-        System.out.println("Задание 7. НЕ РЕШИЛА.");
+        System.out.println("Задание 7.");
 
-        int place1, place2, buffer1, buffer2;
+        int len = arr.length;
+//        n %= len;
+//        for (int j = len - 1; j >= n; j--){
+//            int c = arr[j];
+//            arr[j] = arr[j-n];
+//            arr[j-n] = c;
+//
+//        }
 
-        for (int i = 0; i < (arr.length - n); i++) {
-            buffer1 = arr[i];
-            place1 = i;
-
-            if (n > 0) {
-                place2 = place1 - n;
-
-                if (place2 < 0)
-                    place2 = place2 + arr.length;
-
-                    if (place2 >= arr.length)
-                        place2 = place2 - arr.length;
-
-
-                buffer2 = arr[place2];
-                arr[place1] = arr[place2];
-                place1 = place2;
-                arr[place2] = buffer2;
-
-            } else if(n < 0) {
-
-                    place2 = place1 - n;
-
-                    if (place2 < 0)
-                        place2 = place2 + arr.length;
-
-                if (place2 >= arr.length)
-                    place2 = place2 - arr.length;
-
-                        if (place2 == i)
-                            break;
-                        buffer2 = arr[place2];
-                        arr[place1] = arr[place2];
-                        place1 = place2;
-                        arr[place2 +n] = buffer2;
-
-                }
-            arr[place1] = buffer1;
-
+        for (int i = 0; i < n % len; i++) {
+            for (int j = arr.length - 1; j > 0; j--) {
+                int c = arr[j];
+                arr[j] = arr[j - 1];
+                arr[j - 1] = c;
+            }
         }
+
         System.out.println();
         System.out.println(Arrays.toString(arr));
         System.out.println();
 
         return arr;
     }
-
 
 }
 

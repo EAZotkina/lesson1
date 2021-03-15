@@ -1,6 +1,6 @@
 package ru.geekbrains.lesson6;
 
-public class Animals {
+public abstract class Animals {
     private static int animalsCount = 0;
 
     public Animals(){
@@ -11,12 +11,20 @@ public class Animals {
         return animalsCount;
     }
 
-    public void run(String name, int distance) {
-        System.out.println(name + " пробежал " + distance + " м." );
-
-    }
-    public void swim(String name, int distance) {
-            System.out.println(name + " проплыл " + distance + " м.");
+    public void run(String name, int distance,int distanceMaxRun) {
+        if (distance > distanceMaxRun) {
+            System.out.println(name + " столько не пробежит");
+        }else {
+            System.out.println(name + " пробежал " + distance + " м.");
         }
     }
+    public void swim(String name, int distance, int distanceMaxSwim) {
+        if (distance > distanceMaxSwim) {
+            System.out.println(name + " столько не проплывет");
+        }else {
+            System.out.println(name + " проплыл " + distance + " м.");
+        }
+      }
+    }
+
 
