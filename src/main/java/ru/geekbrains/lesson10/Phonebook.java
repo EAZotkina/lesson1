@@ -30,10 +30,10 @@ public class Phonebook {
         if (this.phonebook.containsKey(surname)) {
             result = "Телефон клиента " + surname + ": " +
                     this.phonebook.get(surname).toString();
-            System.out.println(result);
         } else {
-            result = "Такого клиента нет в справочнике";
+            result = "Клиента " + surname + " нет в справочнике";
         }
+        System.out.println(result);
         return result;
     }
 

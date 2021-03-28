@@ -36,6 +36,7 @@ public class Names {
         for (String name : uniqueNames) {
             System.out.println(name + " в списке встречается " + Collections.frequency(names20, name) + " раз.");
         }
+        
     }
 }
 

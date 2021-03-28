@@ -1,8 +1,5 @@
 package ru.geekbrains.lesson10;
 
-import java.util.Arrays;
-import java.util.Map;
-
 public class PhonebookApp {
 
     public static void main(String[] args) {
@@ -16,6 +13,7 @@ public class PhonebookApp {
         phonebook.printPhonebook();
 
         phonebook.get("Иванов И.И.");
+        phonebook.get("Павлов И.И.");
 
         }
 
