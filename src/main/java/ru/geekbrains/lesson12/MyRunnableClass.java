@@ -45,7 +45,9 @@ public class MyRunnableClass implements Runnable {
         new Thread(() -> {
             float[] a1 = calculate(arr1);
             System.arraycopy(a1, 0, arr1, 0, a1.length);
-        }).start();
+        })
+                .start();
+
 
         new Thread(() -> {
             float[] a2 = calculate(arr2);
