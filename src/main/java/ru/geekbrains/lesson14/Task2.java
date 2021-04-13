@@ -1,6 +1,7 @@
 package ru.geekbrains.lesson14;
 
 public class Task2 {
+
     public static boolean Check1and4(int[] arr) {
         boolean i1 = false, i4 = false;
         for (int i = 0; i < arr.length; i++) {

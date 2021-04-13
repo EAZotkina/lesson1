@@ -32,7 +32,6 @@ public class Task2Test {
     public void startTest() {
         task2 = new Task2();
     }
-
     @Test
     public void testOnly1And4() {
         Assert.assertEquals(Task2.Check1and4(in), out);

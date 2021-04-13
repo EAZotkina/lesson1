@@ -3,7 +3,6 @@ package ru.geekbrains.lesson14;
 import java.util.Arrays;
 
 public class Task1 {
-
         public static int[] afterLast4(int[] arr) throws RuntimeException {
             int n = 0;
             String str = Arrays.toString(arr);
